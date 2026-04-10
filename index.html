@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Gravity Food Decision Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Anti-Gravity Engine</h1>
+    
+    <!-- User Input Panel -->
+    <div class="card">
+        <h2><span style="font-size:1.5rem">🧠</span> Context Agent</h2>
+        
+        <div class="input-group">
+            <label>Intended Craving / Order</label>
+            <select id="intendedFood">
+                <option value="double_bacon_cheeseburger">🍔 Double Bacon Cheeseburger (900 cal)</option>
+                <option value="large_fries">🍟 Large Fries (500 cal)</option>
+                <option value="chocolate_milkshake">🥤 Chocolate Milkshake (800 cal)</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Stress Level via Biometrics (0 = Zen, 10 = High Stress)</label>
+            <input type="range" id="stressSlider" min="0" max="10" step="1" value="8">
+            <div class="slider-labels">
+                <span>Zen</span>
+                <span>Stressed</span>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Sleep Quality via Wearable (0 = Exhausted, 10 = Rested)</label>
+            <input type="range" id="sleepSlider" min="0" max="10" step="1" value="3">
+            <div class="slider-labels">
+                <span>Exhausted</span>
+                <span>Well Rested</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommendations / AI Panel -->
+    <div class="card results-card">
+        <div class="willpower-indicator">
+            <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;">CALCULATED WILLPOWER (State H_t)</span>
+            <span class="willpower-badge" id="willpowerStatus">40%</span>
+        </div>
+        
+        <div id="resultsContainer">
+            <div id="swapSuggestion">
+                <!-- Javascript will inject the swap card here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
